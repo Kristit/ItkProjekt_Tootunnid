@@ -5,14 +5,20 @@
 
 
 
+        import java.util.Calendar;
+        import java.util.GregorianCalendar;
         import java.util.Scanner; /*selle pead sa alati enen public folderit sisse tooma,
         sest see annab programmile teada, et sa kasutad liberist scanneri koodijuppi*/
 
 
 
+        import java.util.Date;
+        import java.text.ParseException;
+        import java.text.SimpleDateFormat; /*convert a Java string to a date,
+        Uses a String pattern to define the expected date format.*/
 
         public class ItkProjekt {
-            public static void main(String[] args) {
+            public static void main(String[] args) throws ParseException {
             Scanner input = new Scanner(System.in);// Kas see igakord saab uue sisendi?
                 System.out.println("Teretulemast töötudnide arvestus programmi!");
                     String kursuseNimi; // defineerin variabalid
@@ -30,20 +36,27 @@
                     aineMaht=second.nextInt();// selle pean tapsutama, et on int
                     sum= aineMaht*20;
             System.out.println("Sinu töötundide arv " + kursuseNimi +" kursusel on: "+ sum+" tundi");
-                
 
-            // nuud peaks vist objective hakkama kasutama?
 
-            // asks user to enter task & deadlines
-                String Ulesanne;
-                System.out.println("Palun sisesta ülesanne ja tähtaeg!"+"\n");
-                System.out.println("Esimene ülesanne:");
-                Scanner i= new Scanner(System.in);
-                Ulesanne=i.next();
+            // asks user how many tasks he/she has
+                String askTaskNumber;
+                Scanner third= new Scanner (System.in);
+                System.out.println("Sisesta mitu erinevat taski Sul on: ");
+                askTaskNumber= third.next();
 
-             //dealine, uleval kaustan Java Dateformatit
-                System.out.println("ja selle tähtaeg:");
-                Scanner scanner= new Scanner(System.in);
+            // asks user to enter tasks
+                String task;
+                System.out.println("Palun sisesta ülesannded"+"\n");
+                Scanner input = new Scanner(System.in);*/
+
+
+
+
+
+                // asks user deadline
+                //Scanner scanner = new Scanner(System.in);
+                //System.out.println("Lisa ülesande tahtaeg: ");
+
 
 
 
