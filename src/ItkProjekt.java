@@ -11,18 +11,19 @@
             public static void main(String[] args) {
             Scanner input = new Scanner(System.in);
                 System.out.println("Teretulemast töötudnide arvestus programmi!");
-                    //String kursuseNimi
+                    String kursuseNimi;
                     //int aineMaht
 
                 //allows user to enter subject name
+                    Scanner one= new Scanner(System.in);
                 System.out.println( "Sisesta oma õpitava aine nimi:");
-                    String kursuseNimi=input.nextLine(); // string=sona, kursuenimi= variable,input= isestatud info, next(line)=kuvab uuel real
+                kursuseNimi =one.nextLine(); // string=sona, kursuenimi= variable,input= isestatud info, next(line)=kuvab uuel real
 
                 //allows user to enter subject volume (AP)
                 System.out.println("Sisesta aine mahu AP-d:");
                     String aineMaht=input.next();
 
-            System.out.println("Sinu töötundide arv selle arine raames on:" );
+            System.out.println("Sinu töötundide arv selle arine raames on:" + kursuseNimi);
 
 
 
