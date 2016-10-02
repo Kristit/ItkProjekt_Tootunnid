@@ -30,8 +30,9 @@
                     aineMaht=second.nextInt();// selle pean tapsutama, et on int
                     sum= aineMaht*20;
             System.out.println("Sinu töötundide arv " + kursuseNimi +" kursusel on: "+ sum+" tundi");
+                
 
-            // nuud peaks vsit objective hakakma kasutama?
+            // nuud peaks vist objective hakkama kasutama?
 
             // asks user to enter task & deadlines
                 String Ulesanne;
