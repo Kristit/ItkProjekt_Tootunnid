@@ -21,9 +21,8 @@
                 int leftHours;
 
                 //asks user to enter subject name
-                Scanner one = new Scanner(System.in);// kuidas saab seda kirjutada nii et ei see allub ulemisele reale?
-                System.out.println("Sisesta oma õpitava aine nimi:");
-                courseName = one.next();
+               System.out.println("Sisesta oma õpitava aine nimi:");
+                courseName = input.next();
 
                 //asks user to enter subject volume (AP)
                 System.out.println("Sisesta aine mahu AP-d:");
@@ -40,10 +39,16 @@
                 String askTaskNimi;
                 System.out.println("Sinu kogu töötundide arv " + courseName + " kursusel on: " + leftHours + " tundi" + "\n");
                 for (int i = 0; i < askTaskNumber; i++) {
+                    Scanner one = new Scanner(System.in);
+                    askTaskNimi = one.nextLine();
                     System.out.println("Palun sisesta task " + (1 + i) + ":");
                     askTaskNimi = input.nextLine();
-                    System.out.println("Palun sisesta task " + (1 + i) + " tundide arv: ");
+
+
+                    System.out.println("Palun sisesta tundide arv: " + (1 + i));
                     int askTaskHours;
+                    Scanner two = new Scanner(System.in);
+                    askTaskHours = two.nextInt();
                     askTaskHours = input.nextInt();
 
 
