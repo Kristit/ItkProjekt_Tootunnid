@@ -36,13 +36,13 @@
                 askTaskNumber = input.nextInt();
 
                 // asks user to enter tasks and how many hours he/she wants to spend time?
-                String askTaskNimi;
+                String askTaskName;
                 System.out.println("Sinu kogu töötundide arv " + courseName + " kursusel on: " + leftHours + " tundi" + "\n");
 
 
                 for (int i = 0; i < askTaskNumber; i++) {
                     System.out.println("Palun sisesta task " + (1 + i) + ":");
-                    askTaskNimi = input.next();
+                    askTaskName = input.next();
 
                     System.out.println( "Palun sisesta tundide arv: " );
                     int askTaskHours;
