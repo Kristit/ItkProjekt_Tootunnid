@@ -99,24 +99,24 @@ public class ItkProjekt extends Application{
     }
         @Override
         public void start(Stage primaryStage) throws Exception {
-            primaryStage.show();
+                primaryStage.show();
 
 
-            StackPane stack = new StackPane();  //stacki omadus-saad ukteise peale panna, aga Pain saad
-            Scene scene = new Scene(stack, 400, 300);
+                StackPane stack = new StackPane();  //stacki omadus-saad ukteise peale panna, aga Pain saad
+                Scene scene = new Scene(stack, 400, 300);
 
-            VBox vbox = new VBox();
-            Scene subjectName = new Scene(vbox, 300, 150);
-            primaryStage.setScene(subjectName);
+                VBox vbox = new VBox();
+                Scene subjectName = new Scene(vbox, 300, 150);
+                primaryStage.setScene(subjectName);
 
-            primaryStage.show();
-            Label pealkiri = new Label("Your subject name?");
-            TextField subjectNamee = new TextField();
-            Button sumbitButton = new Button("Registrate");
-            vbox.getChildren().addAll(pealkiri, subjectNamee, sumbitButton);
-            primaryStage.show();
+                primaryStage.show();
+                Label pealkiri = new Label("Your subject name?");
+                TextField subjectNamee = new TextField();
+                Button sumbitButton = new Button("Registrate");
+                vbox.getChildren().addAll(pealkiri, subjectNamee, sumbitButton);
+                primaryStage.show();
 
 
-
+            }
     }
 }
