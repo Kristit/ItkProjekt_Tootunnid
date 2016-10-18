@@ -43,7 +43,7 @@ public class ItkProjekt extends Application {
         // TODO: check if this course has already been saved to a file and in that case load the data from that file
 
         //asks user to enter subject volume (AP)
-        System.out.println("Add your creddits:");
+        System.out.println("Add your credits:");
         credits = input.nextInt();
         leftHours = credits * 20;
 
@@ -72,15 +72,15 @@ public class ItkProjekt extends Application {
 
         for (int i = 1; i <= askedTaskNumber; i++) {
             Task task = new Task();
-            System.out.println("Palun sisesta task " + i + ":");
+            System.out.println("Please add your task: " + i + ":");
             task.name = input.next();// as it is string, you don't need a next String!! (Intiga is nessery)
 
             if (i < askedTaskNumber) {
-                if (i>1) System.out.println("\nJärgijäänud töötundide maht on: " + leftHours);
-                System.out.println( "Palun sisesta tundide arv: " );
+                if (i>1) System.out.println("\nLefthours: " + leftHours);
+                System.out.println( "Please add your task: " );
                 task.hours = input.nextInt(); // luhendad rida
                 if (task.hours > leftHours) {
-                    System.out.println("Vaata tundide arv üle! Error!");
+                    System.out.println("Check your hours! Error!");
                     i--; // make i same as it was the current task
                     continue; // contnniu for loop
                 }
@@ -98,8 +98,7 @@ public class ItkProjekt extends Application {
 
     /* @Override on märge, mis ütleb, et käesolev meetod on super klassist (Application) üle kirjutatud.
     Nimelt Application klassis on meetod start() juba olemas, aga meie kirjutame selle tegevused enda vajaduse järgi üle.*/
-        return null;
-    }
+
 
     @Override
     public void start(Stage primaryStage) throws Exception {
