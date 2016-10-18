@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -20,13 +21,15 @@ sest see annab programmile teada, et sa kasutad liberist scanneri koodijuppi*/
 import java.text.ParseException;
 
 public class ItkProjekt extends Application{
-    public static void main(String[] args) throws ParseException {
 
-        public static void main(String[] args) {
-            launch(args);
+         TextField subjectNamee = new TextField();
+
+    public static void main(String[] args) throws ParseException { // programmi alguspunk
+
+        launch(args); // kasu alustada
 
 
-        /*Scanner input = new Scanner(System.in);// sobib kogu programmile =>tahan siin kasutada Java oma koodi juppi)
+        Scanner input = new Scanner(System.in);// sobib kogu programmile =>tahan siin kasutada Java oma koodi juppi)
         System.out.println("Teretulemast töötundide arvestus programmi!" + "\n");
         String courseName; // defineerin variabalid
         int credits;
@@ -60,9 +63,9 @@ public class ItkProjekt extends Application{
         }
 
         // TODO: save the course (with task list) to a file
-        */
 
 
+    }
     private static ArrayList<Task> readTaskList(Scanner input, int askedTaskNumber, int leftHours) {
         ArrayList<Task> taskList = new ArrayList<Task>(); /* we have array list and we call it taskList, we
         creat a new arrayList of tasks object*/
@@ -99,24 +102,27 @@ public class ItkProjekt extends Application{
     }
         @Override
         public void start(Stage primaryStage) throws Exception {
-                primaryStage.show();
-
 
                 StackPane stack = new StackPane();  //stacki omadus-saad ukteise peale panna, aga Pain saad
                 Scene scene = new Scene(stack, 400, 300);
 
                 VBox vbox = new VBox();
-                Scene subjectName = new Scene(vbox, 300, 150);
+                Scene subjectName = new Scene(vbox, 300, 150); // teksti kasti suurus
                 primaryStage.setScene(subjectName);
 
-                primaryStage.show();
+
                 Label pealkiri = new Label("Your subject name?");
-                TextField subjectNamee = new TextField();
                 Button sumbitButton = new Button("Registrate");
+                sumbitButton.setOnMouseClicked(event -> System.out.println(subjectNamee.getText())); // nupule tegevus
                 vbox.getChildren().addAll(pealkiri, subjectNamee, sumbitButton);
-                primaryStage.show();
+                primaryStage.show();// "ekraan" kuhu kast kuvatakse
 
 
-            
+            Button sumbitButton = new Button("Registrate");
+            sumbitButton.setOnMouseClicked(sumbitButton.setOnMouseClicked(this::doStuff);
+            vbox.getChildren().addAll(pealkiri, subjectNamee, sumbitButton);
+    }
+     private void doStuff(MouseEvent mouseEvent) {
+        System.out.println(subjectNamee.getText());
     }
 }
