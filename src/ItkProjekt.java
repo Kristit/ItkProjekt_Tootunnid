@@ -117,6 +117,6 @@ public class ItkProjekt extends Application{
                 primaryStage.show();
 
 
-            }
+            
     }
 }
