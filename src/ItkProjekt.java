@@ -86,11 +86,10 @@ public class ItkProjekt extends Application{
         return taskList;
     }
 
-    @Override
+
     /* @Override on märge, mis ütleb, et käesolev meetod on super klassist (Application) üle kirjutatud.
     Nimelt Application klassis on meetod start() juba olemas, aga meie kirjutame selle tegevused enda vajaduse järgi üle.*/
 
-    public void start(Stage primaryStage) throws Exception {
         @Override
         public void start(Stage primaryStage) throws Exception {
             primaryStage.show();
