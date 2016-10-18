@@ -20,9 +20,9 @@ sest see annab programmile teada, et sa kasutad liberist scanneri koodijuppi*/
 
 import java.text.ParseException;
 
-public class ItkProjekt extends Application{
+public class ItkProjekt extends Application {
 
-         TextField subjectNamee = new TextField();
+    TextField subjectNamee = new TextField();
 
     public static void main(String[] args) throws ParseException { // programmi alguspunk
 
@@ -40,37 +40,37 @@ public class ItkProjekt extends Application{
         courseName = input.next();
 
 
-
         // TODO: check if this course has already been saved to a file and in that case load the data from that file
 
         //asks user to enter subject volume (AP)
-        System.out.println("Sisesta aine mahu AP-d:");
+        System.out.println("Add your creddits:");
         credits = input.nextInt();
         leftHours = credits * 20;
 
         // asks user how many tasks he/she has
-        System.out.println("Sisesta mitu erinevat taski Sul kursuse jooksul on: ");
+        System.out.println(" How many tasks you have in your course? ");
         int askedTaskNumber = input.nextInt();
 
         // asks user to enter tasks and how many hours he/she wants to spend time?
-        System.out.println("Sinu kogu töötundide arv " + courseName + " kursusel on: " + leftHours + " tundi\n");
+        System.out.println("Your working hours amount is for " + courseName + " course " + leftHours + " hours\n");
 
         ArrayList<Task> taskList = readTaskList(input, askedTaskNumber, leftHours);
 
         System.out.println("\nExcellent! You have: " + taskList.size() + " tasks"); // fn F2 shows descripiton of anything
-        for (int i=0; i<taskList.size(); i++) {
-            System.out.println("\nTask " + (i+1) + " is " + taskList.get(i).name + " and has " + taskList.get(i).hours + " hours");
+        for (int i = 0; i < taskList.size(); i++) {
+            System.out.println("\nTask " + (i + 1) + " is " + taskList.get(i).name + " and has " + taskList.get(i).hours + " hours");
         }
 
         // TODO: save the course (with task list) to a file
 
 
     }
+
     private static ArrayList<Task> readTaskList(Scanner input, int askedTaskNumber, int leftHours) {
         ArrayList<Task> taskList = new ArrayList<Task>(); /* we have array list and we call it taskList, we
         creat a new arrayList of tasks object*/
 
-       /* for (int i = 1; i <= askedTaskNumber; i++) {
+        for (int i = 1; i <= askedTaskNumber; i++) {
             Task task = new Task();
             System.out.println("Palun sisesta task " + i + ":");
             task.name = input.next();// as it is string, you don't need a next String!! (Intiga is nessery)
@@ -87,7 +87,7 @@ public class ItkProjekt extends Application{
                 leftHours = leftHours - task.hours; //  if there no error, only then save it ..Refector->rename variables all
             } else {
                 task.hours = leftHours; // that we get last hours form system caluclation
-                System.out.println("Töötundide maht on: "+ leftHours);
+                System.out.println("Workinghours: "+ leftHours);
             }
             taskList.add(task); // we collected all datas and now puting in the taskList
         }
@@ -100,29 +100,29 @@ public class ItkProjekt extends Application{
     Nimelt Application klassis on meetod start() juba olemas, aga meie kirjutame selle tegevused enda vajaduse järgi üle.*/
         return null;
     }
-        @Override
-        public void start(Stage primaryStage) throws Exception {
 
-                StackPane stack = new StackPane();  //stacki omadus-saad ukteise peale panna, aga Pain saad
-                Scene scene = new Scene(stack, 400, 300);
+    @Override
+    public void start(Stage primaryStage) throws Exception {
 
-                VBox vbox = new VBox();
-                Scene subjectName = new Scene(vbox, 300, 150); // teksti kasti suurus
-                primaryStage.setScene(subjectName);
+        StackPane stack = new StackPane();  //stacki omadus-saad ukteise peale panna, aga Pain saad
+        Scene scene = new Scene(stack, 400, 300);
 
-
-                Label pealkiri = new Label("Your subject name?");
-                Button sumbitButton = new Button("Registrate");
-                sumbitButton.setOnMouseClicked(event -> System.out.println(subjectNamee.getText())); // nupule tegevus
-                vbox.getChildren().addAll(pealkiri, subjectNamee, sumbitButton);
-                primaryStage.show();// "ekraan" kuhu kast kuvatakse
+        VBox vbox = new VBox();
+        Scene subjectName = new Scene(vbox, 300, 150); // teksti kasti suurus
+        primaryStage.setScene(subjectName);
 
 
-            Button sumbitButton = new Button("Registrate");
-            sumbitButton.setOnMouseClicked(sumbitButton.setOnMouseClicked(this::doStuff);
-            vbox.getChildren().addAll(pealkiri, subjectNamee, sumbitButton);
+        Label title = new Label("Your subject name?");
+        Button sumbitButton = new Button("Registrate");
+        sumbitButton.setOnMouseClicked(this::doStuff);
+        vbox.getChildren().addAll(title, subjectNamee, sumbitButton); /* subjecNamee viisin ulesse klassifiildi (tostsin valja meetodist)
+        siis saan erinevates meetoditest pooruda fildi poole*/
+        primaryStage.show();// "ekraan" kuhu kast kuvatakse
+
+
     }
-     private void doStuff(MouseEvent mouseEvent) {
+
+    private void doStuff(MouseEvent mouseEvent) { //saan kogu tegevuse, mis saan nupu vajutsega teha
         System.out.println(subjectNamee.getText());
     }
 }
