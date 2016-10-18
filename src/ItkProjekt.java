@@ -21,7 +21,12 @@ import java.text.ParseException;
 
 public class ItkProjekt extends Application{
     public static void main(String[] args) throws ParseException {
-        Scanner input = new Scanner(System.in);// sobib kogu programmile =>tahan siin kasutada Java oma koodi juppi)
+
+        public static void main(String[] args) {
+            launch(args);
+
+
+        /*Scanner input = new Scanner(System.in);// sobib kogu programmile =>tahan siin kasutada Java oma koodi juppi)
         System.out.println("Teretulemast töötundide arvestus programmi!" + "\n");
         String courseName; // defineerin variabalid
         int credits;
@@ -55,7 +60,8 @@ public class ItkProjekt extends Application{
         }
 
         // TODO: save the course (with task list) to a file
-    }
+        */
+
 
     private static ArrayList<Task> readTaskList(Scanner input, int askedTaskNumber, int leftHours) {
         ArrayList<Task> taskList = new ArrayList<Task>(); /* we have array list and we call it taskList, we
@@ -89,7 +95,8 @@ public class ItkProjekt extends Application{
 
     /* @Override on märge, mis ütleb, et käesolev meetod on super klassist (Application) üle kirjutatud.
     Nimelt Application klassis on meetod start() juba olemas, aga meie kirjutame selle tegevused enda vajaduse järgi üle.*/
-
+        return null;
+    }
         @Override
         public void start(Stage primaryStage) throws Exception {
             primaryStage.show();
