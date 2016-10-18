@@ -2,13 +2,24 @@
  * Tootundied jaotus ja lugemine
  * Created by kristitammet on 02/10/16.
  */
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Paint;
+import javafx.stage.Stage;
+
 import java.util.ArrayList;
 import java.util.Scanner; /*selle pead sa alati enen public folderit sisse tooma,
 sest see annab programmile teada, et sa kasutad liberist scanneri koodijuppi*/
 
 import java.text.ParseException;
 
-public class ItkProjekt {
+public class ItkProjekt extends Application{
     public static void main(String[] args) throws ParseException {
         Scanner input = new Scanner(System.in);// sobib kogu programmile =>tahan siin kasutada Java oma koodi juppi)
         System.out.println("Teretulemast töötundide arvestus programmi!" + "\n");
@@ -19,6 +30,8 @@ public class ItkProjekt {
         //asks user to enter subject name
         System.out.println("Sisesta oma õpitava aine nimi:");
         courseName = input.next();
+
+
 
         // TODO: check if this course has already been saved to a file and in that case load the data from that file
 
@@ -48,7 +61,7 @@ public class ItkProjekt {
         ArrayList<Task> taskList = new ArrayList<Task>(); /* we have array list and we call it taskList, we
         creat a new arrayList of tasks object*/
 
-        for (int i = 1; i <= askedTaskNumber; i++) {
+       /* for (int i = 1; i <= askedTaskNumber; i++) {
             Task task = new Task();
             System.out.println("Palun sisesta task " + i + ":");
             task.name = input.next();// as it is string, you don't need a next String!! (Intiga is nessery)
@@ -71,5 +84,33 @@ public class ItkProjekt {
         }
 
         return taskList;
+    }
+
+    @Override
+    /* @Override on märge, mis ütleb, et käesolev meetod on super klassist (Application) üle kirjutatud.
+    Nimelt Application klassis on meetod start() juba olemas, aga meie kirjutame selle tegevused enda vajaduse järgi üle.*/
+
+    public void start(Stage primaryStage) throws Exception {
+        @Override
+        public void start(Stage primaryStage) throws Exception {
+            primaryStage.show();
+
+
+            StackPane stack = new StackPane();  //stacki omadus-saad ukteise peale panna, aga Pain saad
+            Scene scene = new Scene(stack, 400, 300);
+
+            VBox vbox = new VBox();
+            Scene subjectName = new Scene(vbox, 300, 150);
+            primaryStage.setScene(subjectName);
+
+            primaryStage.show();
+            Label pealkiri = new Label("Your subject name?");
+            TextField subjectNamee = new TextField();
+            Button sumbitButton = new Button("Registrate");
+            vbox.getChildren().addAll(pealkiri, subjectNamee, sumbitButton);
+            primaryStage.show();
+
+
+
     }
 }
