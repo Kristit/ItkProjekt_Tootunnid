@@ -115,8 +115,8 @@ public class ItkProjekt extends Application {
         Button sumbitButton = new Button("Registrate");
         sumbitButton.setOnMouseClicked(this::doStuff);
         vbox.getChildren().addAll(title, subjectNamee, sumbitButton); /* subjecNamee viisin ulesse klassifiildi (tostsin valja meetodist)
-        siis saan erinevates meetoditest pooruda fildi poole. Kusi veel seda opetajalt jargi?
-        primaryStage.show();// "ekraan" kuhu kast kuvatakse
+        siis saan erinevates meetoditest pooruda fildi poole. Kusi veel seda opetajalt jargi?*/
+        primaryStage.show();// "ekraan" kuhu kast kuvataks
 
 
     }
