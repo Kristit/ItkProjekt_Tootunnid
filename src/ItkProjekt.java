@@ -23,6 +23,7 @@ import java.text.ParseException;
 public class ItkProjekt extends Application {
 
     TextField subjectNamee = new TextField();
+    TextField subjectCredit= new TextField();
 
     public static void main(String[] args) throws ParseException { // programmi alguspunk
 
@@ -111,13 +112,19 @@ public class ItkProjekt extends Application {
         primaryStage.setScene(subjectName);
 
 
-        Label title = new Label("Your subject name?");
+        Label title1 = new Label("Your subject name?");
         Button sumbitButton = new Button("Registrate");
         sumbitButton.setOnMouseClicked(this::doStuff);
-        vbox.getChildren().addAll(title, subjectNamee, sumbitButton); /* subjecNamee viisin ulesse klassifiildi (tostsin valja meetodist)
+        vbox.getChildren().addAll(title1, subjectNamee, sumbitButton); /* subjecNamee viisin ulesse klassifiildi (tostsin valja meetodist)
         siis saan erinevates meetoditest pooruda fildi poole. Kusi veel seda opetajalt jargi?*/
         primaryStage.show();// "ekraan" kuhu kast kuvataks
 
+        Label title2 = new Label("How many credits you have?");
+        Button sumbitButton2 = new Button("Registrate");
+        sumbitButton.setOnMouseClicked(this::doStuff);
+        vbox.getChildren().addAll(title2, subjectCredit, sumbitButton2); /* subjecNamee viisin ulesse klassifiildi (tostsin valja meetodist)
+        siis saan erinevates meetoditest pooruda fildi poole. Kusi veel seda opetajalt jargi?*/
+        primaryStage.show();// "ekraan" kuhu kast kuvataks
 
     }
 
